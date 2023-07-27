@@ -6,12 +6,13 @@ using FluentAssertions;
 
 using Moq;
 
-public abstract class TurnstileTestsBase<TTurnstile>
+public abstract partial class TurnstileTestsBase<TTurnstile>
     where TTurnstile : ITurnstileState, ITurnstileControl
 {
     private protected IAlarm Alarm { get; } = Mock.Of<IAlarm>();
 
     private protected ICoinReceiver CoinReceiver { get; } = Mock.Of<ICoinReceiver>();
+
     private protected abstract TTurnstile Target { get; }
 
     [Fact]
@@ -76,5 +77,11 @@ public abstract class TurnstileTestsBase<TTurnstile>
         this.Target.Unlock();
 
         this.Target.IsUnlocked.Should().BeTrue();
+    }
+
+    public enum TurnstileAction
+    {
+        Coin,
+        Pass,
     }
 }
