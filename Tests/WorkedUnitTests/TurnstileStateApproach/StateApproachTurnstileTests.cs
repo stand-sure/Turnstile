@@ -2,8 +2,11 @@ namespace WorkedUnitTests.TurnstileStateApproach;
 
 using global::TurnstileStateApproach;
 
+using JetBrains.Annotations;
+
 using Xunit.Categories;
 
+[UsedImplicitly]
 [UnitTest(nameof(TurnstileStateApproach))]
 public class StateApproachTurnstileTests : TurnstileTestsBase<Turnstile>
 {
