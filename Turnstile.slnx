@@ -1,0 +1,18 @@
+<Solution>
+  <Folder Name="/Common/">
+    <Project Path="Abstractions\Abstractions.csproj" Type="C#" />
+  </Folder>
+  <Folder Name="/LiveDemo/">
+    <Project Path="Session01\Session01.csproj" Type="C#" />
+  </Folder>
+  <Folder Name="/WorkedApproaches/" />
+  <Folder Name="/WorkedApproaches/src/">
+    <Project Path="NaiveTurnstile\NaiveTurnstile.csproj" Type="C#" />
+    <Project Path="TurnstileStateApproach\TurnstileStateApproach.csproj" Type="C#" />
+    <Project Path="TurnstileTransitionApproach\TurnstileTransitionApproach.csproj" Type="C#" />
+  </Folder>
+  <Folder Name="/WorkedApproaches/tests/">
+    <Project Path="Tests\WorkedUnitTests\WorkedUnitTests.csproj" Type="C#" />
+  </Folder>
+  <Project Path="Service/Service.csproj" />
+</Solution>

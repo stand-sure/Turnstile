@@ -9,9 +9,9 @@ using Moq;
 public abstract partial class TurnstileTestsBase<TTurnstile>
     where TTurnstile : ITurnstileState, ITurnstileControl
 {
-    private protected IAlarm Alarm { get; } = Mock.Of<IAlarm>();
+    private protected IAlarm Alarm { get; } = Mock.Of<IAlarm>(MockBehavior.Loose);
 
-    private protected ICoinReceiver CoinReceiver { get; } = Mock.Of<ICoinReceiver>();
+    private protected ICoinReceiver CoinReceiver { get; } = Mock.Of<ICoinReceiver>(MockBehavior.Loose);
 
     private protected abstract TTurnstile Target { get; }
 
