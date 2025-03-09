@@ -1,8 +1,12 @@
-namespace Service;
+namespace Service.Math.Ports;
 
 using HotChocolate.Language;
 
 using JetBrains.Annotations;
+
+using Service.Math;
+using Service.Math.Adapters;
+using Service.Math.Inputs;
 
 [ExtendObjectType(OperationType.Mutation)]
 [PublicAPI]
@@ -11,10 +15,10 @@ internal class MathMutations
 {
     [GraphQLType<DecimalResultType>]
     public Task<DecimalResult> AddAsync(
-        [Service] ExampleClient client,
+        [Service] SomeExternalService client,
         [GraphQLType<DecimalBinaryOperationInputType>] DecimalBinaryOperationInput input,
         CancellationToken cancellationToken)
     {
-        return client.SendAddRequest(input, cancellationToken);
+        return client.AddAsync(input, cancellationToken);
     }
 }

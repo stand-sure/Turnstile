@@ -2,13 +2,11 @@ namespace Service;
 
 using Microsoft.AspNetCore.Mvc;
 
-internal static class RouteHandlers
-{
-    public static string SayHello([FromQuery] string name = "world")
-    {
-        return $"hello {name}";
-    }
+using Service.Math;
+using Service.Math.Inputs;
 
+internal static class MathRouteHandlers
+{
     public static DecimalResult Add([FromBody] DecimalBinaryOperationInput input)
     {
         return new DecimalResult(input.Left + input.Right);

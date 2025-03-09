@@ -1,4 +1,4 @@
-namespace Service;
+namespace Service.Routing;
 
 internal static class RouteConfiguration
 {

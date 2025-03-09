@@ -1,4 +1,4 @@
-namespace Service;
+namespace Service.Routing;
 
 internal static class MathRouteConfig
 {
@@ -6,7 +6,7 @@ internal static class MathRouteConfig
     {
         RouteGroupBuilder group = routeBuilder.MapGroup("math");
 
-        group.MapPost("add", RouteHandlers.Add)
+        group.MapPost("add", MathRouteHandlers.Add)
             .Produces<Result<decimal>>()
             .WithTags("math");
     }

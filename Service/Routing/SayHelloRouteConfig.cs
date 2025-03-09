@@ -1,4 +1,4 @@
-namespace Service;
+namespace Service.Routing;
 
 internal static class SayHelloRouteConfig
 {
@@ -6,7 +6,7 @@ internal static class SayHelloRouteConfig
     {
         RouteGroupBuilder groupBuilder = routeBuilder.MapGroup("/say-hello");
 
-        groupBuilder.MapGet("/", RouteHandlers.SayHello)
+        groupBuilder.MapGet("/", HelloRouteHandlers.SayHello)
             .Produces<string>()
             .WithTags("hello")
             .WithDescription("says hello to `name`");
